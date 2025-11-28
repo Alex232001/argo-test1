@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  namespace: dev-apps  # ← ДОБАВИТЬ namespace
+  namespace:  my-web-apps  # ← ДОБАВИТЬ namespace
 spec:
   replicas: 2
   selector:
@@ -23,7 +23,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service
-  namespace: dev-apps  # ← ДОБАВИТЬ namespace
+  namespace:  my-web-apps  # ← ДОБАВИТЬ namespace
 spec:
   selector:
     app: nginx
@@ -35,7 +35,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  namespace: dev-apps  # ← ДОБАВИТЬ namespace
+  namespace:  my-web-apps  # ← ДОБАВИТЬ namespace
   annotations:
     external-dns.alpha.kubernetes.io/hostname: web.stellarclaw.ru
     cert-manager.io/cluster-issuer: "letsencrypt-dev"
