@@ -118,10 +118,10 @@ emailService:
 ingress:
   enabled: true
   className: "nginx"
-  host: "web.stellarclaw.ru"
+  host: "store.stellarclaw.ru"
   # Рекомендую добавить эти аннотации:
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: "web.stellarclaw.ru"
+    external-dns.alpha.kubernetes.io/hostname: "store.stellarclaw.ru"
     cert-manager.io/cluster-issuer: "letsencrypt-dev"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
   tls: true
